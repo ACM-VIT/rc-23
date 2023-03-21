@@ -24,3 +24,12 @@ foreach(srcfile ${SRC_FILES})
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${myOSOutput})
     add_executable(${srcname} ${srcfile})
 endforeach(srcfile ${SRC_FILES})
+
+
+cmake_minimum_required(VERSION 3.16)
+
+project(genexec)
+
+add_executable(./*.cpp)
+
+install(TARGETS ./*.cpp DESTINATION instdir)
