@@ -2,9 +2,10 @@ name: CPBuild
 
 on:
   push:
-    branches: [genexec]
+    branches: [main]
   pull_request:
-    branches: [genexec]
+    branches: [main]
+
 
 env:
   CMAKE_VERSION: 3.24.3
@@ -24,22 +25,26 @@ jobs:
             name: "Windows Latest MSVC", artifact: "Windows-MSVC.7z",
             os: windows-latest,
             cc: "cl", cxx: "cl",
+            myOSOutput: "windows",
             environment_script: "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvars64.bat"
           }
         - {
             name: "Windows Latest MinGW", artifact: "Windows-MinGW.7z",
             os: windows-latest,
-            cc: "gcc", cxx: "g++"
+            cc: "gcc", cxx: "g++",
+            myOSOutput: "windows"
           }
         - {
             name: "Ubuntu Latest GCC", artifact: "Linux.7z",
             os: ubuntu-latest,
-            cc: "gcc", cxx: "g++"
+            cc: "gcc", cxx: "g++",
+            myOSOutput: "unix"
           }
         - {
             name: "macOS Latest Clang", artifact: "macOS.7z",
             os: macos-latest,
-            cc: "clang", cxx: "clang++"
+            cc: "clang", cxx: "clang++",
+            myOSOutput: "unknown"
           }
 
     steps:
