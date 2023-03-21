@@ -6,7 +6,7 @@
 #include <vector>
 #define MAX 10000
 
-std::vector<std::vector<int>> sparseTable(MAX, std::vector<int>(MAX, -1));
+std::vector<std::vector<int> > sparseTable(MAX, std::vector<int>(MAX, -1));
 
 void buildSparseTable(std::vector<int> &vec, int n)
 {
