@@ -2,9 +2,9 @@ name: CPBuild
 
 on:
   push:
-    branches: [genexec]
+    branches: [round2]
   pull_request:
-    branches: [genexec]
+    branches: [round2]
 
 
 env:
