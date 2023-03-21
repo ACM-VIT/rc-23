@@ -33,7 +33,10 @@
     In the first test case “hello” all characters domt have same frequency. So it has to be modified in minimum number of operations. The best way is to change ‘l’ to any other character other than ‘h’, ‘e’, ‘o’.One of the possible solutions is “hezlo”. minimum operation is 1
 */
 
-#include <bits/stdc++.h>
+#include <string>
+#include <set>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
