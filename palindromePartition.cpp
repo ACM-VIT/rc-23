@@ -8,7 +8,7 @@
 int getMinPartitions(std::string str)
 {
     std::vector<int> partitions(str.length());
-    std::vector<std::vector<bool>> dp(str.length(), std::vector<bool>(str.length(), false));
+    std::vector<std::vector<bool> > dp(str.length(), std::vector<bool>(str.length(), false));
 
     for (int i = 0; i < str.length(); i++)
     {

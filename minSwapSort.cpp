@@ -11,7 +11,7 @@ using namespace std;
 void minSwaps(int n, std::vector<int> &nums)
 {
     std::vector<bool> isVisited(n, false);
-    std::vector<pair<int, int>> vec(n);
+    std::vector<pair<int, int> > vec(n);
 
     for (int i = 0; i < n; i++)
     {
