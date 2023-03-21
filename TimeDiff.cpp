@@ -42,4 +42,5 @@ int main()
     	std::cout << "Invalid input. Please check the question description.\n";
 	}
 	return 0;
+	// text comment
 }
