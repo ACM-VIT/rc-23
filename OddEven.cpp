@@ -15,6 +15,7 @@ int solve(int n)
     }
     cout<<"\n";
     delete[] arr;
+    return 0;
 }
 
 int main()
