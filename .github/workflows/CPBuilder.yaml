@@ -44,7 +44,7 @@ jobs:
             name: "macOS Latest Clang", artifact: "macOS.7z",
             os: macos-latest,
             cc: "clang", cxx: "clang++",
-            myOSOutput: "unknown"
+            myOSOutput: "macos"
           }
 
     steps:
