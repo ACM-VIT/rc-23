@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+
 using namespace std;
 
 vector<int> spiralOrder(vector<vector<int> >& matrix)
@@ -45,7 +49,7 @@ int main()
     cout << "Enter the number of columns: ";
     cin >> n;
 
-    vector<vector<int>> a(m, vector<int>(n));
+    vector<vector<int> > a(m, vector<int>(n));
     cout << "Enter the elements of the matrix row-wise:" << endl;
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
