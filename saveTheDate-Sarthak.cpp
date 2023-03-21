@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 int solve(int day, int month, int year)
@@ -41,21 +43,22 @@ int solve(int day, int month, int year)
             cout << "Saturday" << endl;
             break;
     }
+    return 0;
 }
 
 int main()
 {
     try
     {
-        int test;
+        int test=0;
         std::cin >> test;
-        if (!std::cin || test < 1 || test > 150)
+        if (test < 1 || test > 150)
             throw -1;
-        for (int t = 0; t < test; t++)
+        for (int t = 1; t <= test; t++)
         {
-            long long a, b, c;
+            long long a=0, b=0, c=0;
             std::cin >> a >> b >> c;
-            if (!std::cin || a < 1 || a > 31 || b < 1 || b > 12 || c < 1 || c > 10000)
+            if (a < 1 || a > 31 || b < 1 || b > 12 || c < 1 || c > 10000)
                 throw -2;
             solve(a, b, c);
         }
