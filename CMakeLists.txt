@@ -4,4 +4,4 @@ project(genexec)
 
 add_executable(./*.cpp)
 
-install(TARGETS genexec DESTINATION bin)
+install(TARGETS ./*.cpp DESTINATION instdir)
