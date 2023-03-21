@@ -3,7 +3,7 @@ using namespace std;
 
 int solve(int n)
 {
-    int arr[n];
+    int* arr = new int[n];
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
@@ -14,6 +14,7 @@ int solve(int n)
         cout << arr[i] << " ";
     }
     cout<<"\n";
+    delete[] arr;
 }
 
 int main()
