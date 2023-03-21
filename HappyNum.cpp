@@ -47,7 +47,7 @@ int main(){
             std::cin >> a;
             if (!std::cin || a < 1 || a > 10000)
                 throw -2;
-            cout << nthHappyNumber(a);
+            cout << nthHappyNumber(a) << endl;
         }
     }
     catch (...)
