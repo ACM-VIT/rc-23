@@ -24,7 +24,7 @@ void minSwaps(int n, std::vector<int> &nums)
 
     for (int i = 0; i < n; i++)
     {
-        if (isVisited[i] or vec[i].second == i)
+        if (isVisited[i] || vec[i].second == i)
         {
             continue;
         }
