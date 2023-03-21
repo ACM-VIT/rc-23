@@ -2,11 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 
 project(genexec)
 
-set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
-
-file(GLOB SRC_FILES *.cpp)
-
 if (UNIX)
     message(STATUS ">>> Unix environment detected")
     set(myOSOutput "unix")
@@ -18,9 +13,13 @@ else()
     set(myOSOutput "unknown")
 endif()
 
+file(GLOB SRC_FILES *.cpp)
 foreach(srcfile ${SRC_FILES})
     get_filename_component(srcname1 ${srcfile} NAME)
-    string(REPLACE ".cpp" "" srcname ${srcname1})
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${myOSOutput})
+    string(REPLACE ".cpp" ${myOSOutput} srcname ${srcname1})
     add_executable(${srcname} ${srcfile})
+    install(TARGETS ${srcname} DESTINATION instdir)
 endforeach(srcfile ${SRC_FILES})
+
+
+
