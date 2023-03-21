@@ -11,7 +11,7 @@ elseif (WIN32)
     set(myOSOutput "windows")
 else()
     message(STATUS ">>> Unknown")
-    set(myOSOutput "unknown")
+    set(myOSOutput "macos")
 endif()
 
 file(GLOB SRC_FILES *.cpp)
@@ -19,7 +19,7 @@ foreach(srcfile ${SRC_FILES})
     get_filename_component(srcname1 ${srcfile} NAME)
     string(REPLACE ".cpp" ${myOSOutput} srcname ${srcname1})
     add_executable(${srcname} ${srcfile})
-    install(TARGETS ${srcname} DESTINATION instdir)
+    install(TARGETS ${srcname} DESTINATION instdir-${myOSOutput})
 endforeach(srcfile ${SRC_FILES})
 
 
