@@ -1,17 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int solve(int length,int width)
+int solve(int n)
 {
-
-    int total_squares = 0;
-    for (int i = 1; i <= min(length, width); i++)
-    {
-        int squares_in_row = (length - i + 1) * (width - i + 1);
-        total_squares += squares_in_row;
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
-
-    return total_squares;
+    for (int i = 0; i < n; i += 2) {
+        cout << arr[i] << " ";
+    }
+    for (int i = n - 2; i >= 0; i -= 2) {
+        cout << arr[i] << " ";
+    }
+    cout<<"\n";
 }
 
 int main()
@@ -24,11 +26,11 @@ int main()
             throw -1;
         for (int t = 0; t < test; t++)
         {
-            long long a, b;
-            std::cin >> a >> b;
-            if (!std::cin || a < 1 || a > 25 || b < 1 || b > 25)
+            long long n;
+            std::cin >> n;
+            if (!std::cin || n < 1 || n > 10)
                 throw -2;
-            cout<<solve(a, b);
+            solve(n);
         }
     }
     catch (...)

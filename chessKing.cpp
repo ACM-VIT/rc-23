@@ -1,6 +1,3 @@
-/*
-    Author: Sai Sreekar
-*/
 #include <iostream>
 
 int main()

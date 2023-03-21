@@ -1,11 +1,10 @@
-// #include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
-#include <string>
+#include <algorithm>
 
 using namespace std;
 
-vector<int> spiralOrder(vector<vector<int> >& matrix)
+vector<int> spiralOrder(vector<vector<int> > &matrix)
 {
     int m = matrix.size(), n = matrix[0].size();
     vector<int> ans;
@@ -14,24 +13,25 @@ vector<int> spiralOrder(vector<vector<int> >& matrix)
         return ans;
 
     vector<vector<bool> > seen(m, vector<bool>(n, false));
-    int dr[] = { 0, 1, 0, -1 };
-    int dc[] = { 1, 0, -1, 0 };
+    int dr[] = {0, 1, 0, -1};
+    int dc[] = {1, 0, -1, 0};
 
     int x = 0, y = 0, di = 0;
 
-    // Iterate from 0 to m * n - 1
-    for (int i = 0; i < m * n; i++) {
+    for (int i = 0; i < m * n; i++)
+    {
         ans.push_back(matrix[x][y]);
         seen[x][y] = true;
         int newX = x + dr[di];
         int newY = y + dc[di];
 
-        if (0 <= newX && newX < m && 0 <= newY && newY < n
-            && !seen[newX][newY]) {
+        if (0 <= newX && newX < m && 0 <= newY && newY < n && !seen[newX][newY])
+        {
             x = newX;
             y = newY;
         }
-        else {
+        else
+        {
             di = (di + 1) % 4;
             x += dr[di];
             y += dc[di];
@@ -40,26 +40,40 @@ vector<int> spiralOrder(vector<vector<int> >& matrix)
     return ans;
 }
 
-// Driver code
 int main()
 {
-    int m, n;
-    cout << "Enter the number of rows: ";
-    cin >> m;
-    cout << "Enter the number of columns: ";
-    cin >> n;
+    try
+    {
+        int test;
+        std::cin >> test;
+        if (!std::cin || test < 1 || test > 150)
+            throw -1;
+        for (int t = 0; t < test; t++)
+        {
+            int m, n;
+            std::cin >> m;
+            std::cin >> n;
+            if (!std::cin || m < 0 || m > 10 || n < 0 || n > 10)
+                throw -2;
 
-    vector<vector<int> > a(m, vector<int>(n));
-    cout << "Enter the elements of the matrix row-wise:" << endl;
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            cin >> a[i][j];
+            vector<vector<int> > a(m, vector<int>(n));
+
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    cin >> a[i][j];
+                }
+            }
+            for (int x : spiralOrder(a))
+            {
+                cout << x << " ";
+            }
         }
     }
-
-    // Function call
-    for (int x : spiralOrder(a)) {
-        cout << x << " ";
+    catch (...)
+    {
+        std::cout << "Invalid input. Please check the question description.\n";
     }
     return 0;
 }
