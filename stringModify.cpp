@@ -54,7 +54,7 @@ void getBalancedString()
     int result = INT_MAX;
     int idx = -1;
     int freqMap[MAX_CHAR] = {};
-    string str;
+    string str = "";
     priority_queue<pair<int, int> > priorityQueue;
     int hashMapArray[MAX_CHAR] = {};
 
