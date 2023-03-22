@@ -15,16 +15,17 @@ void solveMyProblem(istream &cin, ostream &cout) {
     try{
         // declare variables here
         int n1, n2;
+        float inp = 0.00;
         // take inputs here
         cin >> n1;
         if (n1 < 3 || n1 > 15 || !std::cin)
         {
             throw -1;
         }
-        int num1[n1];
+        vector <float> num1(n1);
         for (int i = 0; i < n1; i++)
         {   
-            int inp;
+            inp = 0.00;
             cin >> inp;            
             if (inp < 1 || inp > 100000 || !std::cin){
                 throw -1;
@@ -36,10 +37,10 @@ void solveMyProblem(istream &cin, ostream &cout) {
         {
             throw -1;
         }
-        int num2[n2];
+        vector<float> num2(n2);
         for (int i = 0; i < n2; i++)
         {
-            int inp;
+            inp = 0.00;
             cin >> inp;
             if (inp < 1 || inp > 100000 || !std::cin){
                 throw -1;
@@ -47,8 +48,8 @@ void solveMyProblem(istream &cin, ostream &cout) {
             num2[i] = inp;
         }
         // solve here
-        float difference;
-        float a,b;
+        float difference = 100000;
+        float a = 0,b = 0;
         for (int i = 0; i < n1; i++)
         {   
             float ratio1 = 0, ratio2 = 0;
