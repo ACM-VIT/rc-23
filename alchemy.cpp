@@ -2,7 +2,9 @@
 #include <string>
 #include <unordered_map>
 #include <exception>
- 
+#include <vector>
+#include <algorithm>
+
 using namespace std;
  
 unordered_map<char, int> elements = {

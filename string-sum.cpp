@@ -32,9 +32,10 @@ int encrypt_string(string str)
         key -= 1;
 
         cout << encrypted;
+        encrypted_string+=encrypted;
     }
 
-    int ascii_sum =0;
+    int ascii_sum = 0;
 
     for (int i = 0; i < encrypted_string.length(); i++)
     {
@@ -47,13 +48,29 @@ int encrypt_string(string str)
 int main()
 {
 
-    cout << "Enter the string to input : ";
-    string str;
-    cin >> str;
+    try {
+        int t;
+        cin>>t;
 
-    int encrypted_sum = encrypt_string(str);
+        while (t--)
+        {
+            string str;
+            cin >> str;
+            for (char x: str){
+                if (!isalpha(x)){
+                    throw exception();
+                }
+            }
+            int encrypted_sum = encrypt_string(str);
 
-    cout<<"The encrypted string's sum of ASCII codes is : "<<encrypted_sum<<endl;
+            cout <<" "<< encrypted_sum << endl;
+        }
+    }
+
+    catch (...) {
+        cout<<"Bad input"<<endl;
+    }
+
 
     return 0;
 }
