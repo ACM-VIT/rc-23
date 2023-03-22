@@ -9,22 +9,23 @@ using namespace std;
 
 void solveMyProblem(istream &cin, ostream &cout) {
     // declare variables here
-    vector<int> num1;
-    vector<int> num2;
     int n1, n2;
+    vector<int> num1(n1);
     // take inputs here
-    cin >> n1 >> n2;
+    cin >> n1;
     for (int i = 0; i < n1; i++)
     {   
         int inp;
         cin >> inp;
-        num1.push_back(inp);
+        num1[i];
     }
+    cin >> n2;
+    vector<int> num2(n2);
     for (int i = 0; i < n2; i++)
     {
         int inp;
         cin >> inp;
-        num2.push_back(inp);
+        num2[i];
     }
 
     // solve here
