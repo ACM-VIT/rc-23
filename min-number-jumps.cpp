@@ -31,7 +31,7 @@ int main()
         return 1;
     }
 
-    vector<int> arr[n];
+    vector<int> arr;
     for (int i = 0; i < n; i++) {
         int inp = 0;
         cin >> inp;
