@@ -6,6 +6,10 @@
 using namespace std;
 #define FastIO ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 
+double absolute(double a, double b) {
+    return (a > b) ?  a - b : b - a;
+}
+
 void solveMyProblem(istream &cin, ostream &cout) {
     double phi = 1.618033988749894;
     try{
@@ -44,26 +48,26 @@ void solveMyProblem(istream &cin, ostream &cout) {
         }
         // solve here
         float difference;
-        int a,b;
+        float a,b;
         for (int i = 0; i < n1; i++)
         {   
             float ratio1 = 0, ratio2 = 0;
-            int distance = 0;
+            float distance = 0;
             for (int j = 0; j < n2; j++)
             {
                 ratio1 = num1[i] / (float) num2[j];
                 ratio2 = num2[j] / (float) num1[i];
-                distance = min(abs(ratio1 - phi), abs(ratio2 - phi));
+                distance = (absolute(ratio1, phi) > absolute(ratio2, phi))? absolute(ratio2, phi) : absolute(ratio1, phi);
                 if (distance <= difference)
                 {
                     difference = distance;
-                    a = num1[i];
-                    b = num2[j];
+                    a = ratio1;
+                    b = ratio2;
                 }
-                // cout << a << "," << b << endl;
+                
             }  
         }
-        cout << a << "/" << b << ":" << difference << endl; 
+        cout << a << " and " << b << ":" << difference << endl; 
     }
     catch (int e)
     {
