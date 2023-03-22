@@ -12,8 +12,7 @@ int lucas(int n) {
 
 int main() {
     int n;
-    std::cout << "Enter index of Lucas number: ";
     std::cin >> n;
-    std::cout << "Lucas number at index " << n << " is " << lucas(n) << "\n";
+    std::cout <<  n << lucas(n) << "\n";
     return 0;
 }
