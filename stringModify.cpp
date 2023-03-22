@@ -33,7 +33,12 @@
     In the first test case “hello” all characters domt have same frequency. So it has to be modified in minimum number of operations. The best way is to change ‘l’ to any other character other than ‘h’, ‘e’, ‘o’.One of the possible solutions is “hezlo”. minimum operation is 1
 */
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <queue>
+#include <utility>
+#include <climits>
 
 using namespace std;
 
@@ -50,7 +55,7 @@ void getBalancedString()
     int idx = -1;
     int freqMap[MAX_CHAR] = {};
     string str;
-    priority_queue<pair<int, int>> priorityQueue;
+    priority_queue<pair<int, int> > priorityQueue;
     int hashMapArray[MAX_CHAR] = {};
 
     for (int i = 0; i < n; i++)
@@ -166,6 +171,6 @@ int main()
     }
     catch (...)
     {
-        std::cout << "Invalid input. Please check the question description.\n";
+        cout << "Invalid input. Please check the question description.\n";
     }
 }
