@@ -29,7 +29,7 @@ void solveMyProblem(istream &cin, ostream &cout) {
             if (inp < 1 || inp > 100000 || !std::cin){
                 throw -1;
             }
-            num1[i];
+            num1[i] = inp;
         }
         cin >> n2;
         if (n2 < 3 || n2 > 15 || !std::cin)
@@ -44,7 +44,7 @@ void solveMyProblem(istream &cin, ostream &cout) {
             if (inp < 1 || inp > 100000 || !std::cin){
                 throw -1;
             }
-            num2[i];
+            num2[i] = inp;
         }
         // solve here
         float difference;
@@ -61,13 +61,13 @@ void solveMyProblem(istream &cin, ostream &cout) {
                 if (distance <= difference)
                 {
                     difference = distance;
-                    a = ratio1;
-                    b = ratio2;
+                    a = num1[i];
+                    b = num2[j];
                 }
                 
             }  
         }
-        cout << a << " and " << b << ":" << difference << endl; 
+        cout << a << " and " << b << " : " << difference << endl; 
     }
     catch (int e)
     {
