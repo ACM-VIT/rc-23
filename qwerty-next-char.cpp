@@ -10,8 +10,6 @@ void solve(string s, int n, unordered_map<char, char> map) {
 }
 
 int main() {
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
     unordered_map<char, char> map;
     string values = "qwertyuiopasdfghjklzxcvbnm";
     for (int i = 0; i < 26; i++)
