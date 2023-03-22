@@ -3,7 +3,7 @@
 int solve(int a, int m, double n) {
   double x;
   x = ((m*n)-a-m)/(1-n);
-  std::cout << x;	
+  std::cout << x << std::endl;	
 }
 
 int main()
