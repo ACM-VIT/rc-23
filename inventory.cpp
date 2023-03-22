@@ -7,8 +7,10 @@ using namespace std;
 
 void inventory_sequence(int terms) {
     int num = 0;
-    vector<int> alst {0};
-    unordered_map<int, int> inventory {{0, 1}};
+    vector<int> alst;
+    alst = {0};
+    unordered_map<int, int> inventory;
+    inventory = {{0, 1}};
 
     for (int n = 2; n <= terms; n++) {
         int c = inventory[num];
